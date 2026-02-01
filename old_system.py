@@ -23,7 +23,7 @@ def run_system_monolith():
         print("4. Analyze Data")
         print("5. Exit")
         
-        opt = input("Select option: ")
+        opt = int(input("Select option: "))
         
         if opt == "1":  
             print("Current Crew List:")
