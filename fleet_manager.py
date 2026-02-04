@@ -58,3 +58,14 @@ def update_rank(names, ranks, ids):
 def display_roster(names, ranks, divs, ids):
     for i in range(len(names)):
         print("Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+
+def search_crew(names, ranks, divs, ids):
+
+    search = input("Enter name here: ")
+
+    for i in range(len(names)):
+        if search in names:
+            print("Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+        else:
+            print("Name not in list.")
+
