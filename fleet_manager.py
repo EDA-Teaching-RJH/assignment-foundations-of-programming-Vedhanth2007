@@ -96,4 +96,10 @@ def calculate_payroll(ranks):
     print("Total payroll is ", total_payroll)
     return total_payroll
 
-def 
+def count_officers(ranks):
+    count = 0
+
+    for rank in ranks:
+        if rank == "Commander" or rank == "Captain":
+            count = count + 1
+    return count
