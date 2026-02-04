@@ -103,3 +103,31 @@ def count_officers(ranks):
         if rank == "Commander" or rank == "Captain":
             count = count + 1
     return count
+
+def main ():
+    name , divs, ranks, ids = init_database()
+
+    while True:
+        option = display_menu()
+
+        if option == 1:
+            names, ranks, divs, ids = add_member(names, ranks, divs, ids)
+        elif option == 2:
+            names, ranks, divs, ids = remove_member(names, ranks, divs, ids)
+        elif option == 3:
+            names , ranks = update_rank(names, ranks, ids)
+        elif option == 4:
+            display_roster(names, ranks, divs, ids)
+        elif option == 5:
+            search_crew(names, ranks, divs, ids)
+        elif option == 6:
+            filter_by_division(names, divs)
+        elif option == 7:
+            calculate_payroll(ranks)
+        elif option == 8:
+            count_officers(ranks)
+        elif option == 9:
+            print("Shutting Down.")
+            break
+        else:
+            print("Invalid option")
