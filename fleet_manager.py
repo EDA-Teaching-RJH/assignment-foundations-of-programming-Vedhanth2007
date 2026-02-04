@@ -72,11 +72,11 @@ def search_crew(names, ranks, divs, ids):
 
     search = input("Enter name here: ").strip().title()
 
-    for i in range(len(names)):
-        if search in names:
-            print(f"Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
-        else:
-            print("Name not in list.")
+    if search in names:
+        i = names.index(search)
+        print(f"Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+    else:
+        print("Name not in list.")
 
 def filter_by_division(names, divs):
     divis = ["Command","Operations","Engineering","Medical","Science","Security"]
