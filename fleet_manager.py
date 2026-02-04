@@ -125,7 +125,7 @@ def main ():
         if option == 1:
             add_member(names, ranks, divs, ids)
         elif option == 2:
-            names, ranks, divs, ids = remove_member(names, ranks, divs, ids)
+            remove_member(names, ranks, divs, ids)
         elif option == 3:
             names , ranks = update_rank(names, ranks, ids)
         elif option == 4:
