@@ -6,11 +6,11 @@ def init_database():
     return names,divs,ranks,ids
 
 def display_menu():
-    name = input("Enter your full name here: ").strip().title()
-    print("You are now logged in as ", name)
-    print("1. Add Members\n 2. Remove Memebers\n 3. Update Rank\n 4. Display Roster\n 5. Search Crew\n 6. Filter by Division\n 7. Calculate Payroll\n 8. Count officers\n 9. Exit")
+    NAME = input("Enter your full name here: ").strip().title()
+    print("You are now logged in as ", NAME)
+    print(" 1. Add Members\n 2. Remove Memebers\n 3. Update Rank\n 4. Display Roster\n 5. Search Crew\n 6. Filter by Division\n 7. Calculate Payroll\n 8. Count officers\n 9. Exit")
     choice = int(input("Enter your choice here: "))
-    return name, choice
+    return NAME, choice
 
 def add_member(names, ranks, divs, ids):
     Tng = ["Captain","Commander","Lt.Commander","Lieutenant","Ensign"]
@@ -49,13 +49,17 @@ def update_rank(names, ranks, ids):
     if id_num in ids:
         b = ids.index(id_num)
         new_rank = input("Enter new rank here: ")
-        names[b] = new_rank
+        ranks[b] = new_rank
         print("Rank updated")
     else:
         print("ID not found.")
         return ranks, names
 
 def display_roster(names, ranks, divs, ids):
+    if len(names) == 0:
+        print("No names in the list")
+
+
     for i in range(len(names)):
         print(f"Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
 
@@ -105,7 +109,8 @@ def count_officers(ranks):
     return count
 
 def main ():
-    name , divs, ranks, ids = init_database()
+    names , divs, ranks, ids = init_database()
+
 
     while True:
         option = display_menu()
@@ -131,3 +136,5 @@ def main ():
             break
         else:
             print("Invalid option")
+
+main()
