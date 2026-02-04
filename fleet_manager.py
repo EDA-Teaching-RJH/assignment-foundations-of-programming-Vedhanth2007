@@ -55,3 +55,6 @@ def update_rank(names, ranks, ids):
         print("ID not found.")
         return ranks, names
 
+def display_roster(names, ranks, divs, ids):
+    for i in range(len(names)):
+        print("Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
