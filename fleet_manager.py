@@ -27,3 +27,17 @@ def add_member(names, ranks, divs, ids):
         print("New crew member added to logs.")
     else:
         print("ID not unique or the rank is not valid")
+
+def remove_member(names, ranks, divs, ids):
+    id_num = input("Enter ID number here: ")
+
+    if id_num in ids:
+        a = ids.index(id_num)
+        names.pop(a)
+        ranks.pop(a)
+        divs.pop(a)
+        ids.pop(a)
+        print("Person has been removed.")
+    else:
+        print("Person not found in list.")
+        return names, ranks, divs, ids
