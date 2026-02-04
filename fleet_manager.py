@@ -5,12 +5,16 @@ def init_database():
     ids = ["176","215","276","304","154"]
     return names,divs,ranks,ids
 
-def display_menu():
-    NAME = input("Enter your full name here: ").strip().title()
-    print("You are now logged in as ", NAME)
+def display_menu(name):
+    #name = input("Enter your full name here: ").strip().title()
+    print("You are now logged in as ", name)
     print(" 1. Add Members\n 2. Remove Memebers\n 3. Update Rank\n 4. Display Roster\n 5. Search Crew\n 6. Filter by Division\n 7. Calculate Payroll\n 8. Count officers\n 9. Exit")
-    choice = int(input("Enter your choice here: "))
-    return NAME, choice
+    while True:
+        choice = int(input("Enter your choice here: "))
+        #if choice <= 1 or choice >= 9:
+        return choice
+        #else:
+            #print("Invalid input.")
 
 def add_member(names, ranks, divs, ids):
     Tng = ["Captain","Commander","Lt.Commander","Lieutenant","Ensign"]
@@ -110,10 +114,12 @@ def count_officers(ranks):
 
 def main ():
     names , divs, ranks, ids = init_database()
+    name = input("Enter your full name here: ").strip().title()
+    display_menu(name)
 
 
     while True:
-        option = display_menu()
+        option = display_menu(name)
 
         if option == 1:
             names, ranks, divs, ids = add_member(names, ranks, divs, ids)
