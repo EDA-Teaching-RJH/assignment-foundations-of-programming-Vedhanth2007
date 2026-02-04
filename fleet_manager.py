@@ -11,3 +11,19 @@ def display_menu():
     print("1. Add Members\n 2. Remove Memebers\n 3. Update Rank\n 4. Display Roster\n 5. Search Crew\n 6. Filter by Division\n 7. Calculate Payroll\n 8. Count officers\n 9. Exit")
     choice = int(input("Enter your choice here: "))
     return name, choice
+
+def add_member(names, ranks, divs, ids):
+    Tng = ["Captain","Commander","Lt.Commander","Lieutenant","Ensign"]
+    n = input("Enter name here: ")
+    r = input("Enter the rank here: ")
+    d = input("Enter the division here: ")
+    ids_num = input("Enter ID number here: ")
+
+    if ids_num not in ids and r in Tng:
+        names.append(n)
+        ranks.append(r)
+        divs.append(d)
+        ids.append(ids_num)
+        print("New crew member added to logs.")
+    else:
+        print("ID not unique or the rank is not valid")
