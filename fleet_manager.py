@@ -41,3 +41,17 @@ def remove_member(names, ranks, divs, ids):
     else:
         print("Person not found in list.")
         return names, ranks, divs, ids
+    
+def update_rank(names, ranks, ids):
+
+    id_num = int(input("Enter ID number here: "))
+
+    if id_num in ids:
+        b = ids.index(id_num)
+        new_rank = input("Enter new rank here: ")
+        names[b] = new_rank
+        print("Rank updated")
+    else:
+        print("ID not found.")
+        return ranks, names
+
