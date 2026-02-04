@@ -14,9 +14,9 @@ def display_menu():
 
 def add_member(names, ranks, divs, ids):
     Tng = ["Captain","Commander","Lt.Commander","Lieutenant","Ensign"]
-    n = input("Enter name here: ")
-    r = input("Enter the rank here: ")
-    d = input("Enter the division here: ")
+    n = input("Enter name here: ").strip().title()
+    r = input("Enter the rank here: ").strip().title()
+    d = input("Enter the division here: ").strip().title()
     ids_num = input("Enter ID number here: ")
 
     if ids_num not in ids and r in Tng:
@@ -44,7 +44,7 @@ def remove_member(names, ranks, divs, ids):
     
 def update_rank(names, ranks, ids):
 
-    id_num = int(input("Enter ID number here: "))
+    id_num = input("Enter ID number here: ")
 
     if id_num in ids:
         b = ids.index(id_num)
@@ -57,15 +57,25 @@ def update_rank(names, ranks, ids):
 
 def display_roster(names, ranks, divs, ids):
     for i in range(len(names)):
-        print("Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+        print(f"Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
 
 def search_crew(names, ranks, divs, ids):
 
-    search = input("Enter name here: ")
+    search = input("Enter name here: ").strip().title()
 
     for i in range(len(names)):
         if search in names:
-            print("Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+            print(f"Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
         else:
             print("Name not in list.")
 
+def filter_by_division(names, divs):
+    divis = ["Command","Operations","Engineering","Medical","Science","Security"]
+    div_in = input("Enter division here: ").strip().title()
+
+    for i in range(len(divis)):
+        if div_in == divis[i]:
+            print(f"Names: {names[i]}")
+        else:
+            print("Division not in list.")
+            return
