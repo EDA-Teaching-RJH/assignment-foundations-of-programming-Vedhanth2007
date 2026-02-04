@@ -95,3 +95,5 @@ def calculate_payroll(ranks):
     
     print("Total payroll is ", total_payroll)
     return total_payroll
+
+def 
