@@ -79,3 +79,19 @@ def filter_by_division(names, divs):
         else:
             print("Division not in list.")
             return
+        
+def calculate_payroll(ranks):
+    value ={
+        "captain": 1000,
+        "Commander": 800,
+        "Lt.Commander": 600,
+        "Lieutenant": 400,
+        "Ensign": 200,
+    }
+
+    total_payroll = 0
+    for rank in ranks:
+        total_payroll = total_payroll + value.get(rank,0)
+    
+    print("Total payroll is ", total_payroll)
+    return total_payroll
