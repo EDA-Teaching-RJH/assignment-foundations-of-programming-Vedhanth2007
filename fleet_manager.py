@@ -18,19 +18,20 @@ def display_menu(name):
 
 def add_member(names, ranks, divs, ids):
     Tng = ["Captain","Commander","Lt.Commander","Lieutenant","Ensign"]
+    divis = ["Command","Operations","Engineering","Medical","Science","Security"]
     n = input("Enter name here: ").strip().title()
     r = input("Enter the rank here: ").strip().title()
     d = input("Enter the division here: ").strip().title()
-    ids_num = input("Enter ID number here: ")
+    ids_num = input("Enter ID number here: ").strip()
 
-    if ids_num not in ids and r in Tng:
+    if ids_num not in ids and r in Tng and d in divis:
         names.append(n)
         ranks.append(r)
         divs.append(d)
         ids.append(ids_num)
         print("New crew member added to logs.")
     else:
-        print("ID not unique or the rank is not valid")
+        print("ID not unique or the rank is not valid or Invalid Division")
 
 def remove_member(names, ranks, divs, ids):
     id_num = input("Enter ID number here: ")
@@ -122,7 +123,7 @@ def main ():
         option = display_menu(name)
 
         if option == 1:
-            names, ranks, divs, ids = add_member(names, ranks, divs, ids)
+            add_member(names, ranks, divs, ids)
         elif option == 2:
             names, ranks, divs, ids = remove_member(names, ranks, divs, ids)
         elif option == 3:
