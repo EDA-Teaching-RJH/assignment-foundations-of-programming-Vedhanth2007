@@ -63,7 +63,7 @@ def display_roster(names, ranks, divs, ids):
 
 
     for i in range(len(names)):
-        print(f"Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+        print(f"Name: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
 
 def search_crew(names, ranks, divs, ids):
 
@@ -71,7 +71,7 @@ def search_crew(names, ranks, divs, ids):
 
     if search in names:
         i = names.index(search)
-        print(f"Names: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+        print(f"Name: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
     else:
         print("Name not in list.")
 
@@ -118,7 +118,7 @@ def count_officers(ranks):
 def main ():
     names , divs, ranks, ids = init_database()
     name = input("Enter your full name here: ").strip().title()
-    display_menu(name)
+    
 
 
     while True:
