@@ -79,15 +79,18 @@ def search_crew(names, ranks, divs, ids):
         print("Name not in list.")
 
 def filter_by_division(names, divs):
-    divis = ["Command","Operations","Engineering","Medical","Science","Security"]
     div_in = input("Enter division here: ").strip().title()
 
-    for i in range(len(divis)):
-        if div_in == divis[i]:
-            print(f"Names: {names[i]}")
-        else:
-            print("Division not in list.")
-            return
+    
+    c = 0
+    for i in range(len(divs)):
+        if divs[i] == div_in:
+            print(f"Name: {names[i]}")
+            c = c + 1
+        i = i + 1
+    if c == 0:
+        print("Division not found.")
+
         
 def calculate_payroll(ranks):
     value ={
