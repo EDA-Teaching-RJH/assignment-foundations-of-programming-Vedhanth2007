@@ -115,6 +115,7 @@ def count_officers(ranks):
     for rank in ranks:
         if rank == "Commander" or rank == "Captain":
             count = count + 1
+    print(count)
     return count
 
 def main ():
