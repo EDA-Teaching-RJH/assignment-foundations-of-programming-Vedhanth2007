@@ -50,7 +50,7 @@ def update_rank(names, ranks, ids):
 
     if id_num in ids:
         b = ids.index(id_num)
-        new_rank = input("Enter new rank here: ")
+        new_rank = input("Enter new rank here: ").strip().title()
         ranks[b] = new_rank
         print("Rank updated")
     else:
