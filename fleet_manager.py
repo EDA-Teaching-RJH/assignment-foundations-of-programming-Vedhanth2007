@@ -94,7 +94,7 @@ def filter_by_division(names, divs):
         
 def calculate_payroll(ranks):
     value ={
-        "captain": 1000,
+        "Captain": 1000,
         "Commander": 800,
         "Lt.Commander": 600,
         "Lieutenant": 400,
@@ -104,7 +104,7 @@ def calculate_payroll(ranks):
     total_payroll = 0
     for rank in ranks:
         total_payroll = total_payroll + value.get(rank,0)
-        print(value.get(rank))
+        
     
     print("Total payroll is ", total_payroll)
     return total_payroll
