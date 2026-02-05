@@ -89,7 +89,7 @@ def filter_by_division(names, divs):
             c = c + 1
         i = i + 1
     if c == 0:
-        print("Division not found.")
+        print("No members of that division.")
 
         
 def calculate_payroll(ranks):
@@ -104,6 +104,7 @@ def calculate_payroll(ranks):
     total_payroll = 0
     for rank in ranks:
         total_payroll = total_payroll + value.get(rank,0)
+        print(value.get(rank))
     
     print("Total payroll is ", total_payroll)
     return total_payroll
