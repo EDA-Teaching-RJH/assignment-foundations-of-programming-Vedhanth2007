@@ -26,9 +26,13 @@ def add_member(names, ranks, divs, ids):
         ranks.append(r)
         divs.append(d)
         ids.append(ids_num)
+        print("------------------------------")
         print("New crew member added to logs.")
+        print("------------------------------")
     else:
+        print("----------------------------------------------------------")
         print("ID not unique or the rank is not valid or Invalid Division")
+        print("----------------------------------------------------------")
 
 def remove_member(names, ranks, divs, ids):
     id_num = input("Enter ID number here: ")
@@ -39,9 +43,13 @@ def remove_member(names, ranks, divs, ids):
         ranks.pop(a)
         divs.pop(a)
         ids.pop(a)
+        print("------------------------")
         print("Person has been removed.")
+        print("------------------------")
     else:
+        print("-------------------------")
         print("Person not found in list.")
+        print("-------------------------")
         return names, ranks, divs, ids
     
 def update_rank(names, ranks, ids):
@@ -52,18 +60,26 @@ def update_rank(names, ranks, ids):
         b = ids.index(id_num)
         new_rank = input("Enter new rank here: ").strip().title()
         ranks[b] = new_rank
+        print("------------")
         print("Rank updated")
+        print("------------")
     else:
+        print("-------------")
         print("ID not found.")
+        print("-------------")
         return ranks, names
 
 def display_roster(names, ranks, divs, ids):
     if len(names) == 0:
+        print("--------------------")
         print("No names in the list")
+        print("--------------------")
 
 
     for i in range(len(names)):
+        print("------------------------------------------------------------------------------")
         print(f"Name: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+        print("------------------------------------------------------------------------------")
 
 def search_crew(names, ranks, divs, ids):
 
@@ -71,9 +87,13 @@ def search_crew(names, ranks, divs, ids):
 
     if search in names:
         i = names.index(search)
+        print("-----------------------------------------------------------------------------")
         print(f"Name: {names[i]}, Rank: {ranks[i]}, Division: {divs[i]}, ID: {ids[i]}")
+        print("-----------------------------------------------------------------------------")
     else:
+        print("-----------------")
         print("Name not in list.")
+        print("-----------------")
 
 def filter_by_division(names, divs):
     div_in = input("Enter division here: ").strip().title()
@@ -82,12 +102,15 @@ def filter_by_division(names, divs):
     c = 0
     for i in range(len(divs)):
         if divs[i] == div_in:
+            print("----------------------")
             print(f"Name: {names[i]}")
+            print("----------------------")
             c = c + 1
         i = i + 1
     if c == 0:
+        print("----------------------------")
         print("No members of that division.")
-
+        print("----------------------------")
         
 def calculate_payroll(ranks):
     value ={
@@ -102,8 +125,9 @@ def calculate_payroll(ranks):
     for rank in ranks:
         total_payroll = total_payroll + value.get(rank,0)
         
-    
+    print("--------------------------------")
     print("Total payroll is ", total_payroll)
+    print("--------------------------------")
     return total_payroll
 
 def count_officers(ranks):
@@ -112,7 +136,9 @@ def count_officers(ranks):
     for rank in ranks:
         if rank == "Commander" or rank == "Captain":
             count = count + 1
-    print(count)
+    print("-----------------------------")
+    print("number of officers are:",count)
+    print("-----------------------------")
     return count
 
 def main ():
