@@ -6,15 +6,12 @@ def init_database():
     return names,divs,ranks,ids
 
 def display_menu(name):
-    #name = input("Enter your full name here: ").strip().title()
     print("You are now logged in as ", name)
     print(" 1. Add Members\n 2. Remove Memebers\n 3. Update Rank\n 4. Display Roster\n 5. Search Crew\n 6. Filter by Division\n 7. Calculate Payroll\n 8. Count officers\n 9. Exit")
     while True:
-        choice = int(input("Enter your choice here: "))
-        #if choice <= 1 or choice >= 9:
+        choice = input("Enter your choice here: ")
         return choice
-        #else:
-            #print("Invalid input.")
+  
 
 def add_member(names, ranks, divs, ids):
     Tng = ["Captain","Commander","Lt.Commander","Lieutenant","Ensign"]
@@ -127,23 +124,23 @@ def main ():
     while True:
         option = display_menu(name)
 
-        if option == 1:
+        if option == "1":
             add_member(names, ranks, divs, ids)
-        elif option == 2:
+        elif option == "2":
             remove_member(names, ranks, divs, ids)
-        elif option == 3:
+        elif option == "3":
             update_rank(names, ranks, ids)
-        elif option == 4:
+        elif option == "4":
             display_roster(names, ranks, divs, ids)
-        elif option == 5:
+        elif option == "5":
             search_crew(names, ranks, divs, ids)
-        elif option == 6:
+        elif option == "6":
             filter_by_division(names, divs)
-        elif option == 7:
+        elif option == "7":
             calculate_payroll(ranks)
-        elif option == 8:
+        elif option == "8":
             count_officers(ranks)
-        elif option == 9:
+        elif option == "9":
             print("Shutting Down.")
             break
         else:
