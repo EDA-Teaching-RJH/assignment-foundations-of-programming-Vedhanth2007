@@ -170,6 +170,8 @@ def main ():
             print("Shutting Down.")
             break
         else:
+            print("--------------")
             print("Invalid option")
+            print("--------------")
 
 main()
