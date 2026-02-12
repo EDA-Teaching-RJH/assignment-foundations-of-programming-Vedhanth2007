@@ -2,7 +2,7 @@ def init_database():
     names = ["James Kirk","Jean-Luc Picard","Spock","Kathryn Janeway","Montgomery Scott"]
     divs = ["Command","Command","Science","Command","Engineering"]
     ranks = ["Captain","Captain","Commander","Captain","Lt.Commander"]
-    ids = ["176","215","276","304","154"]
+    ids = ["176","215","276","656","754"]
     return names,divs,ranks,ids
 
 def display_menu(name):
