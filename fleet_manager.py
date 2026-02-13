@@ -113,17 +113,17 @@ def filter_by_division(names, divs):
         print("----------------------------")
         
 def calculate_payroll(ranks):
-    value ={
-        "Captain": 1000,
-        "Commander": 800,
-        "Lt.Commander": 600,
-        "Lieutenant": 400,
-        "Ensign": 200,
-    }
-
+    value = [1000,800,600,400,200,]
+    vrank = ["Captain","Commander","Lt.Commander","Lieutenant","Ensign"]
     total_payroll = 0
+
+    
+    
     for rank in ranks:
-        total_payroll = total_payroll + value.get(rank,0)
+        if rank in vrank:
+            v = vrank.index(rank)
+
+            total_payroll = total_payroll + value[v]
         
     print("--------------------------------")
     print("Total payroll is ", total_payroll)
